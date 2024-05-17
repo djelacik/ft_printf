@@ -1,0 +1,6 @@
+#ignore all object files
+*.o
+*.a
+
+#ignore executable
+a.out
