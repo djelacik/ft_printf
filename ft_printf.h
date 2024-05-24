@@ -6,7 +6,7 @@
 /*   By: djelacik <djelacik@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 13:38:02 by djelacik          #+#    #+#             */
-/*   Updated: 2024/05/15 16:31:21 by djelacik         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:28:26 by djelacik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include <stdio.h>
 
 typedef struct s_util
 {
@@ -27,9 +26,12 @@ typedef struct s_util
 	int	left_align;
 	int	zero_fill;
 	int	precision;
+	int	precision_active;
 	int	space;
 	int	hash;
 	int	plus;
+	int	int_is_zero;
+	int	int_is_minus;
 }	t_util;
 
 int			ft_isdigit(int c);
@@ -54,6 +56,7 @@ int			ft_printf(const char *format, ...);
 /*
 **			Functions for bonus part
 */
+int			ft_abs(int x, int y);
 void		*ft_memset(void *b, int c, size_t len);
 void		*ft_bzero(void *s, size_t n);
 void		arg_len_str(va_list args, t_util *info);

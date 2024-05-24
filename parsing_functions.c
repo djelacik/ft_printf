@@ -6,7 +6,7 @@
 /*   By: djelacik <djelacik@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:38:32 by djelacik          #+#    #+#             */
-/*   Updated: 2024/05/15 16:53:57 by djelacik         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:04:33 by djelacik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	precision_helper(const char **format, t_util *info);
 
 void	get_percision(const char **format, t_util *info)
 {
+	info->precision = 0;
 	while (ft_isdigit((int) **format))
 	{
 		info->precision = info->precision * 10 + (**format - '0');
@@ -63,6 +64,7 @@ void	parse_flags(const char **format, t_util *info)
 static void	precision_helper(const char **format, t_util *info)
 {
 	(*format)++;
+	info->precision_active = 1;
 	if (ft_isdigit((int) **format))
 		get_percision(format, info);
 }

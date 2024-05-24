@@ -6,7 +6,7 @@
 /*   By: djelacik <djelacik@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 18:13:36 by djelacik          #+#    #+#             */
-/*   Updated: 2024/05/15 17:23:03 by djelacik         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:02:13 by djelacik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,17 @@ int	ft_printf(const char *format, ...)
 			format++;
 	}
 	va_end(args);
+	if (str_util.flag == -1)
+		return (-1);
 	return (str_util.total);
 }
-
-// #include <limits.h>
-// int	main(void)
-// {
-// 	printf("Mine%d\n", (printf("Mine%d\n",printf("%p\n", (void *)25))));
-// 	//my_printf("Hello, %c! This is a %%s example.\n", 'W');
-// 	printf("OG%d\n", (printf("Real:%d",ft_printf("%p\n", (void *)25))));
-
-// 	//printf("Mine%d\n",printf(" %-11p %-12p ", (void *)INT_MIN, (void *)INT_MAX));
-// 	//my_printf("Hello, %c! This is a %%s example.\n", 'W');
-// 	//printf("Real:%d",ft_printf(" %-11p %-12p ", (void *)INT_MIN, (void *)INT_MAX));
-// 	//ft_printf("First number: %c Second number %c\n", 'a', 'b');
-// 	return (0);
-// }
+#include <libc.h>
+int main()
+{
+	printf("Og len:%d\n", printf("%1s", (char *)NULL));
+	printf("My len:%d\n", ft_printf("%1s", (char *)NULL));
+	// printf("Og:%.1d\n", -9);
+	// ft_printf("My:%.1d\n", -9);
+	// printf("%1s, %1s, %1s, %1s", (char *)NULL, "", "test", "joihwhhgsdkhksdgsdg\t\v\n\r\f\a25252\b6");
+	// ft_printf("%1s, %1s, %1s, %1s", (char *)NULL, "", "test", "joihwhhgsdkhksdgsdg\t\v\n\r\f\a25252\b6");
+}

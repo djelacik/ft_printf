@@ -6,7 +6,7 @@
 /*   By: djelacik <djelacik@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 16:00:49 by djelacik          #+#    #+#             */
-/*   Updated: 2024/05/15 13:56:22 by djelacik         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:48:54 by djelacik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,28 @@ static void	print_zeros(int count, t_util *info)
 
 static void	print_precision(int count, t_util *info)
 {
+	if (info->int_is_minus)
+	{
+		ft_putchar('-', info);
+	}
 	while (count-- > 0)
 		ft_putchar('0', info);
 }
 
 static void	print_prefix(t_util *info, const char *format)
 {
-	if (info->hash && (*format == 'x' || *format == 'X'))
+	if (info->hash && (*format == 'x' || *format == 'X') && !info->int_is_zero)
 	{
 		ft_putchar('0', info);
 		ft_putchar(*format, info);
 	}
-	else if (info->plus && (*format == 'd' || *format == 'i'))
+	else if (info->plus && (*format == 'd'
+			|| *format == 'i') && !info->int_is_minus)
 	{
 		ft_putchar('+', info);
 	}
-	else if (info->space && (*format == 'd' || *format == 'i'))
+	else if (info->space && (*format == 'd' || *format == 'i')
+		&& !info->int_is_minus)
 	{
 		ft_putchar(' ', info);
 	}
@@ -53,7 +59,9 @@ void	print_flags(const char *str, va_list args, t_util *info)
 	int	zero_pad;
 
 	pad_len = info->width - info->arg_len;
-	zero_pad = info->precision - info->arg_len;
+	zero_pad = 0;
+	if (info->arg_len)
+		zero_pad = info->precision - info->arg_len;
 	if (zero_pad > 0)
 		pad_len -= zero_pad;
 	print_prefix(info, str);
@@ -63,7 +71,8 @@ void	print_flags(const char *str, va_list args, t_util *info)
 		print_spaces(pad_len, info);
 	if (zero_pad > 0)
 		print_precision(zero_pad, info);
-	print_format(str, args, info);
+	if (!(info->precision == 0 && info ->precision_active == 1))
+		print_format(str, args, info);
 	if (info->left_align && pad_len > 0)
 		print_spaces(pad_len, info);
 }

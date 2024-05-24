@@ -6,7 +6,7 @@
 /*   By: djelacik <djelacik@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 10:31:59 by djelacik          #+#    #+#             */
-/*   Updated: 2024/05/15 13:29:10 by djelacik         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:28:45 by djelacik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,11 @@ void	*ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 	return (s);
+}
+
+int	ft_abs(int x, int y)
+{
+	if((x-y) < 0)
+		return(-(x-y));
+	return (x-y);
 }
