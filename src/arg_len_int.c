@@ -6,7 +6,7 @@
 /*   By: djelacik <djelacik@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:54:47 by djelacik          #+#    #+#             */
-/*   Updated: 2024/05/23 14:37:04 by djelacik         ###   ########.fr       */
+/*   Updated: 2024/06/15 12:45:03 by djelacik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static int	ft_numlen(int n, t_util *info)
 	if (n < 0)
 	{
 		n *= -1;
-//		len++;
 		info->int_is_minus = 1;
 	}
 	while (n >= 10)

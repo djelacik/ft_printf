@@ -6,7 +6,7 @@
 /*   By: djelacik <djelacik@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 18:13:36 by djelacik          #+#    #+#             */
-/*   Updated: 2024/05/24 10:58:23 by djelacik         ###   ########.fr       */
+/*   Updated: 2024/06/15 12:44:30 by djelacik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_printf(const char *format, ...)
 		return (-1);
 	return (str_util.total);
 }
-#include <libc.h>
+/* #include <libc.h>
 int main()
 {
     ft_printf("Hello, %s!\n", "world");
@@ -74,4 +74,4 @@ int main()
     ft_printf("Alternate form (hex): %#x\n", number);
     ft_printf("Multiple flags: %4.8d\n", number);
     return 0;
-}
+} */

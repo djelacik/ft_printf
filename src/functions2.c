@@ -6,7 +6,7 @@
 /*   By: djelacik <djelacik@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 10:31:59 by djelacik          #+#    #+#             */
-/*   Updated: 2024/05/23 14:28:45 by djelacik         ###   ########.fr       */
+/*   Updated: 2024/06/15 12:47:29 by djelacik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	*ft_bzero(void *s, size_t n)
 
 int	ft_abs(int x, int y)
 {
-	if((x-y) < 0)
-		return(-(x-y));
-	return (x-y);
+	if ((x - y) < 0)
+		return (- (x - y));
+	return (x - y);
 }
